@@ -2,6 +2,8 @@
 
 Projektin tarkoituksena on toteuttaa Markovin ketjujen avulla algoritmi, joka tuottaa valitun säveltäjän kaltaista musiikkia. 
 
+Tarkoituksena on opettaa algoritmi yhden tai useamman säveltäjän sävellyksillä, jonka jälkeen algoritmi pystyy tuottamaan samantyylistä musiikkia. 
+
 Projekti toteutetaan Pythonilla ja projektin kielenä käytetään suomea. Vertaisarviointi voidaan tehdä myös Javalla tai JavaScriptilla.
 
 Projekti on osa tietojenkäsittelytieteen kandidaatin opintoja.
@@ -27,3 +29,5 @@ Algoritmin aikavaativuus on O(n).
 ## Ratkaisua vaativia kysymyksiä:
 
 - kuinka testaus toteutetaan. Yksikkötestauksella on helppo tarkistaa tietorakenteen toiminta, mutta miten algoritmin oikeellisuus testataan?
+- käytetäänkö syötteenä yksittäisiä nuotteja, jolloin lopputulos on melodian kaltainen, vai sointuja, jolloin lopputuloksena on sointukulku? Jälkimmäinen tuntuisi tässä vaiheessa mielenkiintoisemmalta.
+- mistä löytyy syötteenä käytettää materiaalia?
