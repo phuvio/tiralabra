@@ -30,4 +30,4 @@ Algoritmin aikavaativuus on O(n).
 
 - kuinka testaus toteutetaan. Yksikkötestauksella on helppo tarkistaa tietorakenteen toiminta, mutta miten algoritmin oikeellisuus testataan?
 - käytetäänkö syötteenä yksittäisiä nuotteja, jolloin lopputulos on melodian kaltainen, vai sointuja, jolloin lopputuloksena on sointukulku? Jälkimmäinen tuntuisi tässä vaiheessa mielenkiintoisemmalta.
-- mistä löytyy syötteenä käytettää materiaalia?
+- mistä löytyy syötteenä käytettävää materiaalia?
