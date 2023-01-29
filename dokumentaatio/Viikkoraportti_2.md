@@ -12,9 +12,16 @@
 
 ## Seuraavaksi
 
+- Markovin ketju -matriisin opettaminen
 - algoritmin kehittäminen, että tulevia tiloja voidaan laskea useamman solmun pituisten ketjujen pohjalta
-- sopivan syötemateriaalin valitseminen (midi syötteenä olisi hyvä, jos sen saa toimimaan)
+- sopivan syötemateriaalin valitseminen 
 
 ## Käytetty tuntimäärä
 
 8 tuntia
+
+## Ratkaisua vaativia kysymyksiä:
+
+- kuinka testaus toteutetaan. Yksikkötestauksella on helppo tarkistaa tietorakenteen toiminta, mutta miten algoritmin oikeellisuus testataan?
+- onnistuisiko midin käyttäminen syötteenä
+- riittääkö algoritmin opettamiseen yksi kappale vai tarvitaanko useita kappaleita
