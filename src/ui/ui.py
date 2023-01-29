@@ -20,7 +20,3 @@ class UI:
         label = ttk.Label(master=self._root, text="Markovin ketju -säveltäjä")
 
         label.pack(side=constants.LEFT)
-        
-
-
-
