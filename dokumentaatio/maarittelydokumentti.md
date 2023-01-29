@@ -25,9 +25,3 @@ Algoritmin aikavaativuus on O(n).
 * https://en.wikipedia.org/wiki/Trie
 * https://albertauyeung.github.io/2020/06/15/python-trie.html/
 * https://www.geeksforgeeks.org/trie-insert-and-search/
-
-## Ratkaisua vaativia kysymyksiä:
-
-- kuinka testaus toteutetaan. Yksikkötestauksella on helppo tarkistaa tietorakenteen toiminta, mutta miten algoritmin oikeellisuus testataan?
-- käytetäänkö syötteenä yksittäisiä nuotteja, jolloin lopputulos on melodian kaltainen, vai sointuja, jolloin lopputuloksena on sointukulku? Jälkimmäinen tuntuisi tässä vaiheessa mielenkiintoisemmalta.
-- mistä löytyy syötteenä käytettävää materiaalia?
