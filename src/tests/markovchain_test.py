@@ -16,7 +16,7 @@ class TestMarkovChain(unittest.TestCase):
         next_state = self._markovchain.next_state("sadetta")
 
         self.assertEqual(next_state, "sadetta")
-                
+
         next_state = self._markovchain.next_state("sumua")
 
         self.assertEqual(next_state, "sumua")

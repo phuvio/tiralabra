@@ -2,11 +2,7 @@ import numpy as np
 
 
 class MarkovChain:
-    """Luokka, joka kuvaa Markovin ketjua
-
-    Args:
-        object (_type_): _description_
-    """
+    """Luokka, joka kuvaa Markovin ketjua"""
 
     def __init__(self, transition_matrix, states):
         """Luokan konstruktori, joka luo uuden Markovin ketjun matriisin
