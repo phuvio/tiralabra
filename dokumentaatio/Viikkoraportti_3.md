@@ -25,7 +25,7 @@
 
 ## Testikattavuus
 
-Toteutettu Markov ketju -matriisi on testattu laajasti. Ohjelman käynnistävä main.py on tässä vaiheessa jätetty testien ulkopuolelle.
+Ohjelman käynnistävä main.py on tässä vaiheessa jätetty testien ulkopuolelle.
 
 !["Testikattavuus 5.2.2023"](./kuvat/testikattavuus_5.2.2023.png)
 
