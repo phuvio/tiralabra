@@ -11,4 +11,4 @@ Testitiedostot:
 - [midin käsittelyyn liittyvät yksikkötestit](../src/tests/midi_test.py)
 - [Markovin ketjuun liittyvät yksikkötestit](../src/tests/markovchain_test.py)
 
-[Yksikkötestien kattavuus](./htmlcov/index.html)
+[Yksikkötestien kattavuus](../src/htmlcov/index.html)
