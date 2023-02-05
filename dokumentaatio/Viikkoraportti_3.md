@@ -3,7 +3,6 @@
 - midi-tiedostojen käsittely, midistä stringiksi ja stringistä midiksi
 - trie-tietorakenteen ohjelmointi
 - trie-tietokantaan ja midin käsittelyyn liittyvien testien ohjelmointi
-- tyhjän dummy-käyttöliittymän ohjelmointi
 
 ## Tällä viikolla tutustuin 
 
