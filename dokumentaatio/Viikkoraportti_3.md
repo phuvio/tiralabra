@@ -16,7 +16,7 @@
   - midi-tiedoston valinta
   - algoritmin kehittämän midi-tiedoston soittaminen ja tallentaminen
 - miten nuotti arvotaan 
-  - nyt algoritmi antaa listan mahdollisista vaihtoehdoista
+  - nyt algoritmi antaa listan mahdollisista vaihtoehdoista annetun Prefixin pohjalta
   - riittääkö arpominen annetun listan vaihtoehdoista vai pitääkö alkuperäisen materiaalin pohjalta laksea painotuksia
 
 ## Käytetty tuntimäärä
