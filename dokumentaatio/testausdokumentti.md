@@ -10,5 +10,3 @@ Testitiedostot:
 - [Trie-tietorakenteeseen liittyvät yksikkötestit](../src/tests/trie_test.py)
 - [midin käsittelyyn liittyvät yksikkötestit](../src/tests/midi_test.py)
 - [Markovin ketjuun liittyvät yksikkötestit](../src/tests/markovchain_test.py)
-
-[Yksikkötestien kattavuus](../src/htmlcov/index.html)
