@@ -8,7 +8,7 @@ Midin käsittelyyn liittyvä testaaminen oli hankalampaa. Ohjelmassa käytetää
 
 Testitiedostot:
 - [Trie-tietorakenteeseen liittyvät yksikkötestit](../src/tests/trie_test.py)
-- [midin käsittelyyn liittyvät yksikkötestit](../../src/tests/midi_test.py)
-- [Markovin ketjuun liittyvät yksikkötestit](../../src/tests/markovchain_test.py)
+- [midin käsittelyyn liittyvät yksikkötestit](../src/tests/midi_test.py)
+- [Markovin ketjuun liittyvät yksikkötestit](../src/tests/markovchain_test.py)
 
-[Yksikkötestien kattavauus](../../htmlcov/index.html)
+[Yksikkötestien kattavauus](../htmlcov/index.html)
