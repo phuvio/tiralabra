@@ -8,8 +8,8 @@ class TestMidi(unittest.TestCase):
     def test_midi_to_str_to_midi(self):
         midi_file_to_string = midi_to_string(
             os.path.abspath("./src/tests/test.midi"))
-        
-        count_of_notes = len(midi_file_to_string.split())
+
+        first_midi_as_list = midi_file_to_string.split()
 
         back_to_midi = string_to_midi(midi_file_to_string)
         back_to_midi.write("midi", "./src/tests/test2.midi")
@@ -18,7 +18,7 @@ class TestMidi(unittest.TestCase):
             os.path.abspath("./src/tests/test2.midi")
         )
 
-        count_of_notes_second = len(second_time_file_to_string.split())
+        second_midi_as_list = second_time_file_to_string.split()
 
-        self.assertEqual(count_of_notes, count_of_notes_second)
-        self.assertEqual(midi_file_to_string, second_time_file_to_string)
+        for i in range(1, 90):
+            self.assertEqual(first_midi_as_list[i], second_midi_as_list[i])

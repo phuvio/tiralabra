@@ -41,7 +41,7 @@ def string_to_midi(sequence_of_notes):
         sequence_of_notes: muutettava str
 
     Returns:
-        midi-tiedoston
+        midi-stream, joka voidaan tallentaa midi-tiedostoksi
     """
 
     stream = music21.stream.Stream()
