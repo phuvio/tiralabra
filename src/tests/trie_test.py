@@ -89,17 +89,14 @@ class TestTrie(unittest.TestCase):
             'n_67_eighth',
             'n_70_eighth'])
 
-        found_choices, found_probabilities = self.test_trie.return_choices([
+        found_choices = self.test_trie.return_choices([
             'n_65_quarter',
             'n_69_quarter',
             'n_67_eighth'])
 
         self.assertEqual(
-            found_choices, ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
-        self.assertEqual(
-            list(found_probabilities.values()), [1, 1, 1]
-        )
-
+            list(found_choices.keys()), ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
+        
     def test_possible_choices_from_given_prefix_with_more_probabilities(self):
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
         self.test_trie.add_list_to_trie([
@@ -123,39 +120,38 @@ class TestTrie(unittest.TestCase):
             'n_67_eighth',
             'n_70_eighth'])
 
-        found_choices, found_probabilities = self.test_trie.return_choices([
+        found_choices = self.test_trie.return_choices([
             'n_65_quarter',
             'n_69_quarter',
             'n_67_eighth'])
 
         self.assertEqual(
-            found_choices, ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
+            list(found_choices.keys()), ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
         self.assertEqual(
-            found_probabilities['n_69_eighth'], 1
+            found_choices['n_69_eighth'], 1
         )
         self.assertEqual(
-            found_probabilities['n_65_eighth'], 2
+            found_choices['n_65_eighth'], 2
         )
         self.assertEqual(
-            found_probabilities['n_70_eighth'], 2
+            found_choices['n_70_eighth'], 2
         )
 
     def test_no_found_choices_from_given_prefix(self):
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
-        found_choices, found_probabilities = self.test_trie.return_choices([
+        found_choices = self.test_trie.return_choices([
             'n_62_quarter',
             'n_70_half',
             'n_38_half'])
 
-        self.assertEqual(found_choices, [])
+        self.assertEqual(found_choices, {})
 
     def test_prefix_not_found(self):
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
-        found_choices, found_probabilities = self.test_trie.return_choices([
+        found_choices = self.test_trie.return_choices([
             'n_50_quarter'
         ])
 
-        self.assertEqual(found_choices, [])
-        self.assertEqual(found_probabilities, {})
+        self.assertEqual(found_choices, {})

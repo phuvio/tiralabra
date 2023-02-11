@@ -44,17 +44,17 @@ class Trie:
                 luettelo nuoteista, joiden jälkeisiä vaihtoehtoja etsitään
 
         Returns:
-            list:
-                2 luetteloa, jotka sisältää annetun prefixiä seuraavat nuottivaihtoehdot
-                sekä nuottivaihtoehtojen todennäköisyydet tuplena
+            dictionary:
+                dictionary, jossa avaimina annettua prefixiä seuraavat nuottivaihtoehdot
+                sekä arvoina nuottivaihtoehtojen todennäköisyydet
         """
         nxt = self.root
         for note in prefix:
             if note not in nxt.nodes:
-                return [], {}
+                return {}
 
             nxt = nxt.nodes[note]
-        return list(nxt.nodes.keys()), nxt.freq
+        return nxt.freq
 
     def size(self, current=None):
         """Palauttaa Trie-tietorakenteen solmujen määrän
@@ -84,6 +84,7 @@ class TrieNode:
         """
         self.nodes = {}
         self.freq = {}
+        self.end_of_song = False
 
     def add_note(self, note):
         """Lisää merkin Trie-solmuun
