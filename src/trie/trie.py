@@ -15,8 +15,8 @@ class Trie:
                 luettero lisättävistä nuoteista
         """
         nxt = self.root
-        for i in note_list:
-            nxt = nxt.add_note(i)
+        for note in note_list:
+            nxt = nxt.add_note(note)
 
     def search_given_prefix(self, list_of_notes):
         """Etsii Trie-tietokannasta tekstiä
@@ -46,7 +46,7 @@ class Trie:
         Returns:
             dictionary:
                 dictionary, jossa avaimina annettua prefixiä seuraavat nuottivaihtoehdot
-                sekä arvoina nuottivaihtoehtojen todennäköisyydet
+                sekä arvoina nuottivaihtoehtojen esiintymismäärät
         """
         nxt = self.root
         for note in prefix:

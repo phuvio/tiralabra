@@ -5,7 +5,7 @@ from ui.ui import UI
 def main():
     window = Tk()
     window.geometry("600x450")
-    window.title("Markovin ketju -säveltäjä")
+    window.title("Musiikin generointi Markovin ketjun avulla")
 
     ui_view = UI(window)
     ui_view.start()

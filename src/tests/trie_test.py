@@ -96,7 +96,7 @@ class TestTrie(unittest.TestCase):
 
         self.assertEqual(
             list(found_choices.keys()), ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
-        
+
     def test_possible_choices_from_given_prefix_with_more_probabilities(self):
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
         self.test_trie.add_list_to_trie([

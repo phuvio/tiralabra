@@ -1,5 +1,4 @@
 import unittest
-import filecmp
 import os.path
 from midi.midi import midi_to_string, string_to_midi
 

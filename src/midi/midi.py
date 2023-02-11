@@ -10,7 +10,7 @@ def midi_to_string(midi_path):
         midi_path: midi-tiedoston sijainti
 
     Returns:
-        str:ksi muutetun midi-tiedoston
+        str:ksi muutettu midi-tiedosto
     """
 
     score = music21.converter.parse(
