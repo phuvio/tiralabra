@@ -1,5 +1,6 @@
 import unittest
 from trie.trie import Trie, TrieNode
+from midi.midi import midi_to_string
 
 
 class TestTrie(unittest.TestCase):
@@ -25,6 +26,8 @@ class TestTrie(unittest.TestCase):
             'n_62_quarter',
             'n_70_half',
             'n_38_half']
+
+        self.ode_to_joy = midi_to_string("./src/tests/ode_to_joy.midi")
 
     def test_add_notes_to_trie(self):
         self.test_trie.add_list_to_trie(self.list_of_notes)
@@ -61,7 +64,7 @@ class TestTrie(unittest.TestCase):
 
         self.assertEqual(found_prefix, True)
 
-    def test_find_given_prefix_not_found(self):
+    def test_given_prefix_not_found(self):
         self.test_trie.add_list_to_trie(self.list_of_notes)
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
 
@@ -86,18 +89,61 @@ class TestTrie(unittest.TestCase):
             'n_67_eighth',
             'n_70_eighth'])
 
-        found_choices = self.test_trie.return_choices([
+        found_choices, found_probabilities = self.test_trie.return_choices([
             'n_65_quarter',
             'n_69_quarter',
             'n_67_eighth'])
 
         self.assertEqual(
             found_choices, ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
+        self.assertEqual(
+            list(found_probabilities.values()), [1, 1, 1]
+        )
+
+    def test_possible_choices_from_given_prefix_with_more_probabilities(self):
+        self.test_trie.add_list_to_trie(self.second_list_of_notes)
+        self.test_trie.add_list_to_trie([
+            'n_65_quarter',
+            'n_69_quarter',
+            'n_67_eighth',
+            'n_65_eighth'])
+        self.test_trie.add_list_to_trie([
+            'n_65_quarter',
+            'n_69_quarter',
+            'n_67_eighth',
+            'n_70_eighth'])
+        self.test_trie.add_list_to_trie([
+            'n_65_quarter',
+            'n_69_quarter',
+            'n_67_eighth',
+            'n_65_eighth'])
+        self.test_trie.add_list_to_trie([
+            'n_65_quarter',
+            'n_69_quarter',
+            'n_67_eighth',
+            'n_70_eighth'])
+
+        found_choices, found_probabilities = self.test_trie.return_choices([
+            'n_65_quarter',
+            'n_69_quarter',
+            'n_67_eighth'])
+
+        self.assertEqual(
+            found_choices, ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
+        self.assertEqual(
+            found_probabilities['n_69_eighth'], 1
+        )
+        self.assertEqual(
+            found_probabilities['n_65_eighth'], 2
+        )
+        self.assertEqual(
+            found_probabilities['n_70_eighth'], 2
+        )
 
     def test_no_found_choices_from_given_prefix(self):
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
-        found_choices = self.test_trie.return_choices([
+        found_choices, found_probabilities = self.test_trie.return_choices([
             'n_62_quarter',
             'n_70_half',
             'n_38_half'])
@@ -107,8 +153,9 @@ class TestTrie(unittest.TestCase):
     def test_prefix_not_found(self):
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
-        found_choices = self.test_trie.return_choices([
+        found_choices, found_probabilities = self.test_trie.return_choices([
             'n_50_quarter'
         ])
 
         self.assertEqual(found_choices, [])
+        self.assertEqual(found_probabilities, {})

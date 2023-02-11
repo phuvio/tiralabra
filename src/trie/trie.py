@@ -17,7 +17,6 @@ class Trie:
         nxt = self.root
         for i in note_list:
             nxt = nxt.add_note(i)
-            nxt.freq += 1
 
     def search_given_prefix(self, list_of_notes):
         """Etsii Trie-tietokannasta tekstiä
@@ -31,10 +30,10 @@ class Trie:
             False, jos prefixiä ei löydy
         """
         nxt2 = self.root
-        for i in list_of_notes:
-            if i not in nxt2.nodes:
+        for note in list_of_notes:
+            if note not in nxt2.nodes:
                 return False
-            nxt2 = nxt2.nodes[i]
+            nxt2 = nxt2.nodes[note]
         return True
 
     def return_choices(self, prefix):
@@ -45,16 +44,17 @@ class Trie:
                 luettelo nuoteista, joiden jälkeisiä vaihtoehtoja etsitään
 
         Returns:
-            dictionary:
-                dictionary, joka sisältää annetun prefixiä seuraavat nuottivaihtoehdot
+            list:
+                2 luetteloa, jotka sisältää annetun prefixiä seuraavat nuottivaihtoehdot
+                sekä nuottivaihtoehtojen todennäköisyydet tuplena
         """
         nxt = self.root
-        for i in prefix:
-            if i not in nxt.nodes:
-                return []
+        for note in prefix:
+            if note not in nxt.nodes:
+                return [], {}
 
-            nxt = nxt.nodes[i]
-        return list(nxt.nodes.keys())
+            nxt = nxt.nodes[note]
+        return list(nxt.nodes.keys()), nxt.freq
 
     def size(self, current=None):
         """Palauttaa Trie-tietorakenteen solmujen määrän
@@ -83,7 +83,7 @@ class TrieNode:
         """Luokan konstruktori, joka luo uuden solmun
         """
         self.nodes = {}
-        self.freq = 0
+        self.freq = {}
 
     def add_note(self, note):
         """Lisää merkin Trie-solmuun
@@ -97,4 +97,7 @@ class TrieNode:
         """
         if note not in self.nodes:
             self.nodes[note] = TrieNode()
+            self.freq[note] = 1
+        else:
+            self.freq[note] += 1
         return self.nodes[note]

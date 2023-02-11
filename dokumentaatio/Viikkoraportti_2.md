@@ -26,8 +26,3 @@ Toteutettu Markov ketju -matriisi on testattu laajasti. Ohjelman käynnistävä 
 
 !["Testikattavuus 29.1.2023"](./kuvat/testikattavuus_29.1.2023.png)
 
-## Ratkaisua vaativia kysymyksiä:
-
-- kuinka testaus toteutetaan. Yksikkötestauksella on helppo tarkistaa tietorakenteen toiminta, mutta miten algoritmin oikeellisuus testataan?
-- onnistuisiko midin käyttäminen syötteenä
-- riittääkö algoritmin opettamiseen yksi kappale vai tarvitaanko useita kappaleita
