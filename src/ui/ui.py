@@ -28,8 +28,9 @@ class UI:
 
         content = list(midi_to_string(os.path.abspath(file.name)).split())
 
-        for i in range(0, len(content) - 5):
-            self._trie.add_list_to_trie(content[i:i+6])
+        for i in range(2, 7):
+            for j in range(0, len(content) - i):
+                self._trie.add_list_to_trie(content[j:j+i])
 
     def _generate_music(self):
         pass
