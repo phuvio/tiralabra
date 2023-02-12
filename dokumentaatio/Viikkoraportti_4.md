@@ -2,6 +2,7 @@
 
 - trie-tietorakenteen käyttö nuottien tallentamiseen
 - käyttöliittymän perustoimintojen ohjelmointi
+- musiikin generoinnin ohjelmointi
 - trie-tietorakenteen testaamisen suunnittelu pitkillä syötteillä
 
 ## Tällä viikolla tutustuin 
