@@ -1,5 +1,5 @@
 import unittest
-from trie.trie import Trie, TrieNode
+from trie.trie import Trie
 from midi.midi import midi_to_string
 
 

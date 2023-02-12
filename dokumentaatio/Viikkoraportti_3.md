@@ -29,8 +29,3 @@ Ohjelman käynnistävä main.py on tässä vaiheessa jätetty testien ulkopuolel
 
 !["Testikattavuus 5.2.2023"](./kuvat/testikattavuus_5.2.2023.png)
 
-## Ratkaisua vaativia kysymyksiä:
-
-- Prefixin pohjalta saatujen nuottivaihtoehtojen valinta - riittääkö arvonta listalta vai tarvitaanko alkuperäisen materiaalin pohjalta lasketut painotukset
-- mitä muuta projektiin tulee vielä ottaa huomioon tai lisätä
-

@@ -2,13 +2,14 @@
 
 - [Määrittelydokumentti](./dokumentaatio/maarittelydokumentti.md)
 - [Testausdokumentti](./dokumentaatio/testausdokumentti.md)
+- [Toteutusdokumentti](./dokumentaatio//toteutusdokumentti.md)
 - [Viikkoraportti 1](./dokumentaatio/Viikkoraportti_1.md)
 - [Viikkoraportti 2](./dokumentaatio/Viikkoraportti_2.md)
 - [Viikkoraportti 3](./dokumentaatio//Viikkoraportti_3.md)
 
 # Huomio Python-versiosta
 
-Sovelluksen toiminta on testattu Python-versiolla 3.8. 
+Sovelluksen toiminta on testattu Python-versiolla 3.8. Linux-koneella.
 
 # Komentorivitoiminnot
 
