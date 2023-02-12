@@ -21,5 +21,7 @@ class TestMidi(unittest.TestCase):
         second_midi_as_list.pop(0)
 
         for i in range(1, len(first_midi_as_list)):
-            self.assertEqual(first_midi_as_list[i].split("_", 2)[
-                             :1], second_midi_as_list[i].split("_", 2)[:1])
+            self.assertEqual(
+                first_midi_as_list[i].split("_", 2)[:1],
+                second_midi_as_list[i].split("_", 2)[:1]
+            )

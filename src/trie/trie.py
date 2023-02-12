@@ -22,8 +22,8 @@ class Trie:
         """Etsii Trie-tietokannasta tekstiä
 
         Args:
-            string: str
-                etsittävä teksti
+            list_of_notes: list of notes
+                etsittävien nuottien luettelo
 
         Returns:
             True, jos etsittävä prefix löytyy tietorakenteesta
@@ -84,7 +84,6 @@ class TrieNode:
         """
         self.nodes = {}
         self.freq = {}
-        self.end_of_song = False
 
     def add_note(self, note):
         """Lisää merkin Trie-solmuun
