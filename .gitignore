@@ -2,5 +2,6 @@
 __pycache__
 .coverage
 htmlcov
+tiralabra/data/generated.midi
 data/generated.midi
 generated.midi
