@@ -12,6 +12,7 @@ numpy = "^1.24.1"
 music21 = "^8.1.0"
 nltk = "^3.8.1"
 pretty-midi = "^0.2.9"
+pygame = "^2.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
