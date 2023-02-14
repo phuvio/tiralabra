@@ -103,8 +103,6 @@ class UI:
         except KeyboardInterrupt:
             pygame.mixer.music.fadeout(1000)
             pygame.mixer.music.stop()
-        
-        pygame.mixer.music.stop()
 
     def start(self):
         """Käynnistää käyttöliittymän"""
