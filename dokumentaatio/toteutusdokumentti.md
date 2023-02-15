@@ -8,6 +8,8 @@ Varsinainen Trie luokka rakentuu TrieNodeista. Trie-luokan funktioita ovat:
 - *return_choices*, joka palauttaa annetun prefixin nuottivaihtoehdot ja niiden esiintyvyysmäärän opetusmateriaalissa
 - *size*, joka on apufunktio testaamiseen. Se laskee trie-tietorakenteen solmujen määrän
 
+Musiikin generointi tapahtuu *generate_music*-funktiolla. Funktio on rekursiivinen. Jos haluttu prefix löytyy trie-tietorakenteesta, niin funktio generoi uuden nuotin uuteen kappaleeseen ja palauttaa päivitetyn generoidun musiikin ja päivitetyn prefixin. Mikäli prefixiä ei löydy triestä, niin funktio poistaa prefixistä ensimmäisen nuotin eli nuotin, joka on ollut prefixissä pisimpään. Sen jälkeen se kutsuu itseään uudelleen lyhyemmällä prefixillä. Tätä jatketaan kunnes uusi prefix löytyy triestä. Tällöin funktio generoi uuden nuotin uuteen kappaleeseen ja palauttaa sen jälkeen prefixin pituuden alkuperäiseksi.
+
 ## Music21-kirjasto
 
 Ohjelma käyttää ulkoista *Music21: a toolkit for computer-aided musicology* -nimistä kirjastoa, jolla se kääntää midi-tiedostot stringeiksi ja toisinpäin. Kirjasto on *Massachusetts Institute of Technologyn* ylläpitämä. Kirjasto analysoi midi-tiedoston ja muuttaa yksittäiset nuotit tekstiksi. Kirjasto muuttaa myös tauot tekstiksi. Nuottien eteen tulee teksti *n_* ja taukojen *w_*. Nuottien kohdalla seuraavaksi merkitään nuotin numeroarvo esim. *n_48". Lopuksi merkitään nuotin pituus esim. *n_48_quarter*. Taukojen kohdalla alkumerkin jälkeen merkitään vain tauon pituus esim. *w_1.0*. Trie-tietorakenteeseen tallennetaan sekä nuotit että tauot. Näin musiikin rytmi pysyy vastaavana kuin alkuperäisessä kappaleessa.
