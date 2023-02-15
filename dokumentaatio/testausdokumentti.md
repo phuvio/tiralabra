@@ -20,6 +20,7 @@ Testatut funktiot:
   - return_choices
 - luokka TrieNode
   - add_note
+- generate_music-funktio
 
 Luokan Trie funktio *size* on apufunktio testaukseen.
 
@@ -52,6 +53,11 @@ Suoritetut testit:
   - trie ei palauta jatkovaihtoehtoja, jos prefixiä ei löydy triestä 
 - test_find_given_prefixes_from_ode_to_joy
   - tarkistaa koko trien sen jälkeen, kun siihen on tallennettu Oodi ilolle -kappale
+- test_generate_music_from_known_prefix
+  - testataan generoiko funktio oikean nuotin, kun prefix löytyy triestä ja sillä on vain yksi vaihtoehto
+- test_generate_music_from_unknown_prefix
+  - testataan generoiko funktio oikean nuotin, kun ainoastaan prefixin viimeinen nuotti löytyy triestä
+  - tämä testi ajetaan varmuuden vuoksi kahteen kertaan samalla trie-tietorakenteella
 
 ### Midin käsittelyyn liittyvien funktioiden yksikkötestaus
 

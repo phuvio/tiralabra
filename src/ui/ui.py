@@ -1,12 +1,11 @@
 import os.path
-import random
 import pygame
-import base64
 import tkinter as tk
 from tkinter import ttk, Listbox, messagebox
 from tkinter import filedialog as fd
 from midi.midi import midi_to_string, string_to_midi
 from trie.trie import Trie
+from trie.generate_music import generate_music
 
 
 class UI:
@@ -35,13 +34,16 @@ class UI:
                 filetypes=[('Midi-tiedostot', '*.midi')],
                 initialdir="./data")
         except IOError:
-            messagebox.showerror("Tiedostoa ei voitu avata", "Tiedosto ei ollut midi-tiedosto.")
+            messagebox.showerror("Tiedostoa ei voitu avata",
+                                 "Tiedosto ei ollut midi-tiedosto.")
             return 0
 
         try:
-            self._content = list(midi_to_string(os.path.abspath(file.name)).split())
+            self._content = list(midi_to_string(
+                os.path.abspath(file.name)).split())
         except:
-            messagebox.showerror("Tiedostoa ei voitu avata", "Tiedosto ei ollut midi-tiedosto.")
+            messagebox.showerror("Tiedostoa ei voitu avata",
+                                 "Tiedosto ei ollut midi-tiedosto.")
             return 0
 
         for i in range(2, 7):
@@ -55,7 +57,8 @@ class UI:
         """
         selected_lenght = self._select_prefix.curselection()
         if selected_lenght == None or len(selected_lenght) == 0:
-            messagebox.showerror("Prefixin pituutta ei valittu", "Valitse prefixin pituus.")
+            messagebox.showerror(
+                "Prefixin pituutta ei valittu", "Valitse prefixin pituus.")
             return 0
 
         prefix_lenght = selected_lenght[0] + 1
@@ -67,19 +70,13 @@ class UI:
         self._generated_music = prefix[:]
 
         while len(self._generated_music) < len(self._content) or self._generated_music[-1][:4] != self._content[-1][:4]:
-            if self._trie.search_given_prefix(prefix):
-                notes = list(self._trie.return_choices(prefix).keys())
-                weights = list(self._trie.return_choices(prefix).values())
+            music, new_prefix = generate_music(
+                self._trie, self._generated_music, prefix)
+            self._generated_music = music[:]
 
-                next_note = random.choices(notes, weights)
+            prefix = new_prefix[:]
+            prefix.pop(0)
 
-                self._generated_music.append(next_note[0])
-                prefix.append(next_note[0])
-                prefix.pop(0)
-
-            else:
-                break
-        
         generated_music_to_string = " ".join(self._generated_music)
         generated_music_to_midi = string_to_midi(generated_music_to_string)
         generated_music_to_midi.write("midi", "./data/generated.midi")
@@ -94,7 +91,8 @@ class UI:
         try:
             pygame.mixer.music.load("./data/generated.midi")
         except pygame.error:
-            messagebox.showerror("Midin soittaminen ei onnistu", "Virhe midi-tiedoston toistamisessa")
+            messagebox.showerror("Midin soittaminen ei onnistu",
+                                 "Virhe midi-tiedoston toistamisessa")
 
         try:
             pygame.mixer.music.play()
@@ -127,7 +125,8 @@ class UI:
         )
         open_button.pack(padx=5, pady=10, expand=False)
 
-        text=ttk.Label(text="Valitse kuinka monta nuottia generoinnissa käytetään")
+        text = ttk.Label(
+            text="Valitse kuinka monta nuottia generoinnissa käytetään")
         text.pack()
 
         self._select_prefix = Listbox(
