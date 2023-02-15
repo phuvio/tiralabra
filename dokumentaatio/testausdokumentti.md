@@ -23,13 +23,15 @@ Testatut funktiot:
 
 Luokan Trie funktio *size* on apufunktio testaukseen.
 
-Testit on suoritettu lyhyillä alle 10 nuotin ketjuilla. Seuraavaksi tehdään samat testit pitkillä syötteillä.
-
 Suoritetut testit:
 - test_add_notes_to_trie
   - tarkistaa trien koon, kun siihen on tallennettu 7 nuottia
+- test_add_ode_to_joy_to_trie
+  - tarkistaa trien koon, kun siihen on tallennettu Oodi ilolle -kappale
 - test_add_same_list_to_trie
   - saman nuottiketjun lisääminen ei muuta trien kokoa
+- test_add_ode_to_joy_twice_to_trie
+  - Oodi ilolle -kappaleen tallentaminen kahteen kertaan triehen ei muuta sen kokoa 
 - test_add_two_lists_with_first_same_note
   - kahden erilaisen, mutta samalla nuotilla alkavan, nuottiketjun lisääminen lisää trien kokoa eroavien nuottien määrän verran 
 - test_add_two_lists_with_different_notes
@@ -48,6 +50,8 @@ Suoritetut testit:
   - jos prefixiä ei löydy triestä, niin trie ei palauta jatkovaihtoehtoja
 - test_prefix_not_found
   - trie ei palauta jatkovaihtoehtoja, jos prefixiä ei löydy triestä 
+- test_find_given_prefixes_from_ode_to_joy
+  - tarkistaa koko trien sen jälkeen, kun siihen on tallennettu Oodi ilolle -kappale
 
 ### Midin käsittelyyn liittyvien funktioiden yksikkötestaus
 
