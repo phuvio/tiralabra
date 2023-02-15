@@ -7,6 +7,7 @@
 - [Viikkoraportti 2](./dokumentaatio/Viikkoraportti_2.md)
 - [Viikkoraportti 3](./dokumentaatio/Viikkoraportti_3.md)
 - [Viikkoraportti 4](./dokumentaatio/Viikkoraportti_4.md)
+- [Viikkoraportti 5](./dokumentaatio/Viikkoraportti_5.md)
 
 # Huomio Python-versiosta
 
