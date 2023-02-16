@@ -31,7 +31,10 @@ class UI:
         try:
             file = fd.askopenfile(
                 mode='r',
-                filetypes=[('Midi-tiedostot', '*.midi')],
+                filetypes=[('Midi-tiedostot', '*.midi'),
+                           ('Midi-tiedostot', '*.mid'),
+                           ('Midi-tiedostot', '*.MID'),
+                           ('Midi-tiedostot', '*.MIDI')],
                 initialdir="./data")
         except IOError:
             messagebox.showerror("Tiedostoa ei voitu avata",

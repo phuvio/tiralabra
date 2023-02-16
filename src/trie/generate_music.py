@@ -31,13 +31,11 @@ def generate_music(trie, generated_music, prefix):
 
     else:
         first_in_prefix = prefix.pop(0)
-        print("otetaan pois: ", first_in_prefix)
+
         new_prefix = prefix[:]
-        print("uusi prefix: ", new_prefix)
         music, prefix = generate_music(trie, generated_music, new_prefix)
-        print("uusi musiikki: ", music)
+
         prefix.insert(0, first_in_prefix)
         generated_music = music[:]
-        print("prefix takaisin: ", prefix)
 
         return generated_music, prefix
