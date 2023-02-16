@@ -18,9 +18,10 @@ def generate_music(trie, generated_music, prefix):
         prefix: list of strings
             luettelo nuoteista, jotka muodostavat uuden prefixin
     """
-    if trie.search_given_prefix(prefix):
-        notes = list(trie.return_choices(prefix).keys())
-        weights = list(trie.return_choices(prefix).values())
+    notes = list(trie.return_choices(prefix).keys())
+    weights = list(trie.return_choices(prefix).values())
+
+    if notes != []:
 
         next_note = random.choices(notes, weights)
 
