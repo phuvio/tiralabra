@@ -21,7 +21,7 @@ def generate_music(trie, generated_music, prefix):
     notes = list(trie.return_choices(prefix).keys())
     weights = list(trie.return_choices(prefix).values())
 
-    if notes != []:
+    if notes:
 
         next_note = random.choices(notes, weights)
 

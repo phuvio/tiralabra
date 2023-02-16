@@ -66,3 +66,6 @@ Ohjelmassa käytetään *Music21: a toolkit for computer-aided musicology* -nimi
 Testatut funktiot:
 - midi_to_string
 - string_to_midi
+
+# Suorituskykytestaus
+
