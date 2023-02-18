@@ -15,6 +15,14 @@ Sovelluksen toiminta on testattu Python-versiolla 3.8. Linux-koneella.
 
 # Komentorivitoiminnot
 
+### Ohjelman asentaminen
+
+Ohjelman pystyy asentamaan komennolla:
+
+```bash
+poetry install
+```
+
 ### Ohjelman suorittaminen
 
 Ohjelman pystyy suorittamaan komennolla:
