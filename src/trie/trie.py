@@ -5,7 +5,7 @@ class Trie:
 
     def __init__(self):
         """Luokan konstruktori, joka luo uuden Trie-tietorakenteen"""
-        self.root = TrieNode()
+        self.root = _TrieNode()
 
     def add_list_to_trie(self, note_list):
         """Lisää Trie-tietokantaan uuden tekstin
@@ -75,7 +75,7 @@ class Trie:
         return count
 
 
-class TrieNode:
+class _TrieNode:
     """Luokka, joka kuvaa Trie-tietorakenteen yksittäisen solmun
     """
 
@@ -96,7 +96,7 @@ class TrieNode:
             dictionary, joka pitää kirjaa solmun kaikista alasolmuista
         """
         if note not in self.nodes:
-            self.nodes[note] = TrieNode()
+            self.nodes[note] = _TrieNode()
             self.freq[note] = 1
         else:
             self.freq[note] += 1

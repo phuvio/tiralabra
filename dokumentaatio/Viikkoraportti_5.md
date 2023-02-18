@@ -9,11 +9,12 @@
 ## Tällä viikolla tutustuin 
 
 - algoritmien laaja testaaminen pitkillä syötteillä
+- midin toistaminen ja siihen liittyvät ongelmat
 
 ## Seuraavaksi
 
 - midi-tiedoston toistamisessa bugeja
-  - toistoa ei nyt pysty keskeyttämään
+  - kun pysäyttää toistamisen kesken, niin ohjelma kaatuu
   - kun yrittää toistaa samaa kappaletta uudelleen tai uutta kappaletta, niin ohjelma kaatuu
 - suorituskykytestaus
   - testataan 10 nuotin, 100 nuotin ja 1000 nuotin midillä
@@ -23,14 +24,14 @@
 
 ## Käytetty tuntimäärä
 
-20 tuntia
+22 tuntia
 
 ## Testikattavuus
 
-Käyttöliittymä on jätetty testauksen ulkopuolelle.
+Käyttöliittymä *ui.py* ja ohjelman käynnistävä *main.py* on jätetty testauksen ulkopuolelle.
 
 !["Testikattavuus 15.2.2023"](./kuvat/testikattavuus_15.2.2023.png)
 
 ## Ratkaisua vaativia kysymyksiä:
 
-- musiikin toisto pysäyttää koko muun ohjelman kokonaan. Musiikkin on kuunneltava loppuun asti, ennen kuin ohjelma reagoi mihinkään. Olen kokeillut useampaa ulkoisat kirjastoa mm. pygame, midi2audio ja pyFluidSynth. Kaikkien kanssa sama ongelma. Ongelma on sama myös, kun toistaa midi-tiedostoja Linuxin omalla playerillä. Midin toistoa ei voi pysäyttää kuin sammuttamalla koko player. Onko parasta jättää koko soitto-ominaisuus pois omasta ohjelmasta ja tyytyä Linuxin playeriin. Ainakin sen voi sammuttaa ja jatkaa musiikin generointia omalla ohjelmalla. 
+- mitä musiikin toistamisen kanssa tulisi tehdä? Olen kokeillut useampaa ulkoisat kirjastoa mm. pygame, midi2audio ja pyFluidSynth. Kaikkien kanssa sama ongelma. Jos toiston keskeyttää tai yrittää kuunnella samaa uudelleen tai vaihtaa kappaletta, niin ohjelma kaatuu.Kun toistaa midi-tiedostoja Linuxin omalla playerillä, niin player ei reagoi mihinkään. Midin toistoa ei voi pysäyttää kuin sammuttamalla koko player. Onko parasta jättää koko soitto-ominaisuus pois omasta ohjelmasta ja tyytyä Linuxin playeriin? Ainakin sen voi sammuttaa ja jatkaa musiikin generointia omalla ohjelmalla. 

@@ -30,13 +30,12 @@ def generate_music(trie, generated_music, prefix):
 
         return generated_music, prefix
 
-    else:
-        first_in_prefix = prefix.pop(0)
+    first_in_prefix = prefix.pop(0)
 
-        new_prefix = prefix[:]
-        music, prefix = generate_music(trie, generated_music, new_prefix)
+    new_prefix = prefix[:]
+    music, prefix = generate_music(trie, generated_music, new_prefix)
 
-        prefix.insert(0, first_in_prefix)
-        generated_music = music[:]
+    prefix.insert(0, first_in_prefix)
+    generated_music = music[:]
 
-        return generated_music, prefix
+    return generated_music, prefix

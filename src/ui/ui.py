@@ -36,10 +36,13 @@ class UI:
                            ('Midi-tiedostot', '*.MID'),
                            ('Midi-tiedostot', '*.MIDI')],
                 initialdir="./data")
+            if file == None:
+                return
         except IOError:
+            print("eerror: ", IOError)
             messagebox.showerror("Tiedostoa ei voitu avata",
                                  "Tiedosto ei ollut midi-tiedosto.")
-            return 0
+            return
 
         try:
             self._content = list(midi_to_string(
@@ -47,7 +50,7 @@ class UI:
         except:
             messagebox.showerror("Tiedostoa ei voitu avata",
                                  "Tiedosto ei ollut midi-tiedosto.")
-            return 0
+            return
 
         for i in range(2, 7):
             for j in range(0, len(self._content) - i):
@@ -62,7 +65,7 @@ class UI:
         if selected_lenght == None or len(selected_lenght) == 0:
             messagebox.showerror(
                 "Prefixin pituutta ei valittu", "Valitse prefixin pituus.")
-            return 0
+            return
 
         prefix_lenght = selected_lenght[0] + 1
         prefix = []
@@ -89,7 +92,7 @@ class UI:
     def _play_midi(self):
         """Soittaa generoidun musiikin
         """
-        clock = pygame.time.Clock()
+#        clock = pygame.time.Clock()
 
         try:
             pygame.mixer.music.load("./data/generated.midi")
@@ -99,11 +102,12 @@ class UI:
 
         try:
             pygame.mixer.music.play()
-            while pygame.mixer.music.get_busy():
-                clock.tick(30)
+#            while pygame.mixer.music.get_busy():
+#                clock.tick(30)
         except KeyboardInterrupt:
             pygame.mixer.music.fadeout(1000)
             pygame.mixer.music.stop()
+            pygame.mixer.music.unload()
 
     def start(self):
         """Käynnistää käyttöliittymän"""
