@@ -69,3 +69,6 @@
 [2023-02-19 12:35:07,234] INFO - music faded out
 [2023-02-19 12:35:07,234] INFO - music stopped
 [2023-02-19 12:35:07,234] INFO - music unloaded from mixer
+[2023-02-19 15:03:22,449] DEBUG - initialize mixer
+[2023-02-19 15:03:22,455] DEBUG - start playing music
+[2023-02-19 15:03:22,609] INFO - music load to mixer

@@ -69,3 +69,96 @@ Testatut funktiot:
 
 ## Suorituskykytestaus
 
+Algoritmin suorituskykyä on testattu tallentamisen ja tiedon haun osalta. Trie-tietorakenteeseen tallennettiin 10-, 100- ja 1000-nuotin pituiset midi-tiedostot. Kaikkien kolmen tallentamista testattiin tallentamalla jokaisen kohdalla yhteensä 100 000 nuottia Triehen. Tallennus tapahtui siten, että kaikki kahden, kolmen, neljän, viiden ja kuuden nuotin ketjut tallennettiin erikseen. Näin Triestä voi hakea generoitavia nuotteja 1-5-nuotin pituisilla prefixeillä.  
+
+Testien tulos:
+-----------------------------------------------------------------------------
+Suorituskykytesti: tietojen tallentaminen Trie-tietorakenteeseen
+   Tallennetaan 100 000 nuottia
+-----------------------------------------------------------------------------
+      10 nuotin pituisen midi-tiedoston tallentaminen
+         Aikaa kului: 0.198039 sekuntia
+         Keskimääräinen aika per midi-tiedosto 0.000002 sekuntia
+         Keskimääräinen aika per nuotti 0.000002 sekuntia
+-----------------------------------------------------------------------------
+      100 nuotin pituisen midi-tiedoston tallentaminen
+         Aikaa kului: 0.199934 sekuntia
+         Keskimääräinen aika per midi-tiedosto 0.000020 sekuntia
+         Keskimääräinen aika per nuotti 0.000002 sekuntia
+-----------------------------------------------------------------------------
+      1000 nuotin pituisen midi-tiedoston tallentaminen
+         Aikaa kului: 0.172730 sekuntia
+         Keskimääräinen aika per midi-tiedosto 0.000173 sekuntia
+         Keskimääräinen aika per nuotti 0.000002 sekuntia
+-----------------------------------------------------------------------------
+
+Tietojen hakua Trie-tietorakenteesta testattiin hakemalla edellisessä testissä muodostuineista kolmesta Trie-tietorakenteesta 1-, 2-, 3-, 4-, ja 5-nuotin mittaisilla prefixeillä yhteensä 100 000 nuottia.
+
+Testin tulos
+-----------------------------------------------------------------------------
+Suorituskykytesti: tietojen hakeminen Trie-tietorakenteesta
+   Haetaan 100 000 nuottia 1 pituisella prefixillä
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.067806 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.065801 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.066154 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+   Haetaan 100 000 nuottia 2 pituisella prefixillä
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.118937 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.120498 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.119040 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+   Haetaan 100 000 nuottia 3 pituisella prefixillä
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.129086 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.127506 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.129165 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+   Haetaan 100 000 nuottia 4 pituisella prefixillä
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.135731 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.137004 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.136033 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+   Haetaan 100 000 nuottia 5 pituisella prefixillä
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.146352 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.145254 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
+-----------------------------------------------------------------------------
+      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto
+         Aikaa kului: 0.147385 sekuntia
+         Keskimääräinen aika 0.000001 sekuntia
