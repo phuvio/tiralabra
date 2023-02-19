@@ -1,11 +1,18 @@
 import os.path
 import pygame
 import tkinter as tk
+import logging
+import sys
 from tkinter import ttk, Listbox, messagebox
 from tkinter import filedialog as fd
 from midi.midi import midi_to_string, string_to_midi
 from trie.trie import Trie
 from trie.generate_music import generate_music
+
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename="debug.log", level=logging.DEBUG,
+                    format="[%(asctime)s] %(levelname)s - %(message)s")
 
 
 class UI:
@@ -92,32 +99,39 @@ class UI:
     def _play_midi(self):
         """Soittaa generoidun musiikin
         """
-#        clock = pygame.time.Clock()
+        pygame.mixer.music.play()
+        logger.info("music started")
 
-        try:
-            pygame.mixer.music.load("./data/generated.midi")
-        except pygame.error:
-            messagebox.showerror("Midin soittaminen ei onnistu",
-                                 "Virhe midi-tiedoston toistamisessa")
+        self._stop_music_button["state"] = tk.NORMAL
 
-        try:
-            pygame.mixer.music.play()
-#            while pygame.mixer.music.get_busy():
-#                clock.tick(30)
-        except KeyboardInterrupt:
-            pygame.mixer.music.fadeout(1000)
-            pygame.mixer.music.stop()
-            pygame.mixer.music.unload()
+    def _stop_music(self):
+        logger.debug("stop playing music")
+        pygame.mixer.music.fadeout(1000)
+        logger.info("music faded out")
+        pygame.mixer.music.stop()
+        logger.info("music stopped")
+ #       pygame.mixer.music.unload()
+        logger.info("music unloaded from mixer")
 
     def start(self):
         """Käynnistää käyttöliittymän"""
+
         freq = 44100
         bitsize = -16
         channels = 2
         buffer = 1024
+        logger.debug("initialize mixer")
         pygame.mixer.init(freq, bitsize, channels, buffer)
 
         pygame.mixer.music.set_volume(0.8)
+        logger.debug("start playing music")
+
+        try:
+            pygame.mixer.music.load("./data/generated.midi")
+            logger.info("music load to mixer")
+        except pygame.error:
+            messagebox.showerror("Midin soittaminen ei onnistu",
+                                 "Virhe midi-tiedoston toistamisessa")
 
         label = ttk.Label(master=self._root,
                           text="Musiikin generointi Markovin ketjun avulla",
@@ -163,3 +177,11 @@ class UI:
             command=self._play_midi
         )
         self._play_midi_button.pack(padx=5, pady=5, expand=False)
+
+        self._stop_music_button = ttk.Button(
+            self._root,
+            text="Pysäytä musiikin toisto",
+            command=self._stop_music,
+            state=tk.DISABLED
+        )
+        self._stop_music_button.pack(padx=5, pady=5, expand=False)
