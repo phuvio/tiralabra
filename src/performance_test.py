@@ -9,7 +9,7 @@ ten_notes = ['w_1.0', 'n_65_quarter', 'n_38_half', 'w_0.5', 'n_62_eighth', 'w_0.
              ]
 
 hundred_notes = ['w_1.0', 'n_65_quarter', 'n_38_half', 'w_0.5', 'n_62_eighth', 'w_0.5',
-                 'n_65_quarter','w_0.5', 'n_67_eighth', 'w_0.5', 'n_65_eighth', 'n_69_quarter',
+                 'n_65_quarter', 'w_0.5', 'n_67_eighth', 'w_0.5', 'n_65_eighth', 'n_69_quarter',
                  'w_0.5', 'n_67_eighth', 'w_0.5', 'n_69_eighth', 'n_62_quarter', 'w_0.5',
                  'n_62_eighth', 'n_36_eighth', 'w_0.5', 'n_70_half', 'n_38_half', 'w_0.5',
                  'n_62_eighth', 'w_0.5', 'n_65_eighth', 'w_0.5', 'n_67_eighth', 'w_0.5',
@@ -266,7 +266,7 @@ total_time = 0                                         # pylint: disable=C0103
 
 for i in range(0, 1000):
     start_time = time.time()                           # pylint: disable=C0103
-    saved_trie = trie.add_list_to_trie(thousand_notes) # pylint: disable=C0103
+    saved_trie = trie.add_list_to_trie(thousand_notes)  # pylint: disable=C0103
     total_time += time.time() - start_time             # pylint: disable=C0103
 avg_time_per_midi = total_time / 1000                  # pylint: disable=C0103
 avg_time_per_note = total_time / 100000                # pylint: disable=C0103

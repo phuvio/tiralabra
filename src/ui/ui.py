@@ -1,18 +1,10 @@
 import os.path
-import pygame
 import tkinter as tk
-import logging
-import sys
 from tkinter import ttk, Listbox, messagebox
 from tkinter import filedialog as fd
 from midi.midi import midi_to_string, string_to_midi
 from trie.trie import Trie
 from trie.generate_music import generate_music
-
-
-logger = logging.getLogger(__name__)
-logging.basicConfig(filename="debug.log", level=logging.DEBUG,
-                    format="[%(asctime)s] %(levelname)s - %(message)s")
 
 
 class UI:
@@ -94,50 +86,14 @@ class UI:
         generated_music_to_midi = string_to_midi(generated_music_to_string)
         generated_music_to_midi.write("midi", "./data/generated.midi")
 
-        self._play_midi_button["state"] = tk.NORMAL
-
-    def _play_midi(self):
-        """Soittaa generoidun musiikin
-        """
-        pygame.mixer.music.play()
-        logger.info("music started")
-
-        self._stop_music_button["state"] = tk.NORMAL
-
-    def _stop_music(self):
-        logger.debug("stop playing music")
-        pygame.mixer.music.fadeout(1000)
-        logger.info("music faded out")
-        pygame.mixer.music.stop()
-        logger.info("music stopped")
- #       pygame.mixer.music.unload()
-        logger.info("music unloaded from mixer")
-
     def start(self):
         """Käynnistää käyttöliittymän"""
-
-        freq = 44100
-        bitsize = -16
-        channels = 2
-        buffer = 1024
-        logger.debug("initialize mixer")
-        pygame.mixer.init(freq, bitsize, channels, buffer)
-
-        pygame.mixer.music.set_volume(0.8)
-        logger.debug("start playing music")
-
-        try:
-            pygame.mixer.music.load("./data/generated.midi")
-            logger.info("music load to mixer")
-        except pygame.error:
-            messagebox.showerror("Midin soittaminen ei onnistu",
-                                 "Virhe midi-tiedoston toistamisessa")
 
         label = ttk.Label(master=self._root,
                           text="Musiikin generointi Markovin ketjun avulla",
                           font=('Helvetica', 14, 'bold'))
 
-        label.pack(padx=5, pady=5)
+        label.pack(padx=5, pady=15)
 
         open_button = ttk.Button(
             self._root,
@@ -169,19 +125,3 @@ class UI:
             state=tk.DISABLED
         )
         self._generate_button.pack(padx=5, pady=5, expand=False)
-
-        self._play_midi_button = ttk.Button(
-            self._root,
-            text="Soita generoitu musiikki",
-            state=tk.DISABLED,
-            command=self._play_midi
-        )
-        self._play_midi_button.pack(padx=5, pady=5, expand=False)
-
-        self._stop_music_button = ttk.Button(
-            self._root,
-            text="Pysäytä musiikin toisto",
-            command=self._stop_music,
-            state=tk.DISABLED
-        )
-        self._stop_music_button.pack(padx=5, pady=5, expand=False)

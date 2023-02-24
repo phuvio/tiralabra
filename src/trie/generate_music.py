@@ -8,13 +8,15 @@ def generate_music(trie, generated_music, prefix):
         trie: trie-tietorakenne
             tietorakenne, johon on syötetty opetuksessa käytetty kappale
         generated_music: list of strings
-            luettelo generoiduista nuoteista stringeinä
+            luettelo aikaisemmin generoiduista nuoteista, joista uusi
+            generoitava kappale muodostuu, stringeinä
         prefix: list of strings
             luettelo nuoteista, jotka muodostavat etsinnässä käytetyn prefixin
 
     Returns:
         generated_music: list of strings
-            luettelo generoiduista nuoteista stringeinä
+            luettelo generoiduista nuoteista, johon on lisätty
+            yksi uusi nuotti, stringeinä
         prefix: list of strings
             luettelo nuoteista, jotka muodostavat uuden prefixin
     """
