@@ -247,9 +247,10 @@ class TestGenerateMusic(unittest.TestCase):
                 self.test_trie.add_list_to_trie(thousand_notes[j:j+i])
 
         for _ in range(0, 10000):
-            index = random.randint(0, len(thousand_notes) - 6)
             lenght_of_prefix = random.randint(0,4)
-            prefix = thousand_notes[index:index+lenght_of_prefix]
+            prefix = []
+            for j in range(0, lenght_of_prefix):
+                prefix.append(thousand_notes[j])
             note = list(self.test_trie.return_choices(prefix).keys())
             new_music, _ = generate_music(self.test_trie, [], prefix)
 

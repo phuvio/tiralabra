@@ -29,7 +29,3 @@ Käyttöliittymä *ui.py* ja ohjelman käynnistävä *main.py* on jätetty testa
 
 !["Testikattavuus 15.2.2023"](./kuvat/testikattavuus_15.2.2023.png)
 
-## Ratkaisua vaativia kysymyksiä:
-
-- midin toistamisen kanssa on ongelmia. Pygamen avulla midin voi toistaa ja toiston voi pysäyttää. Sen voi toteuttaa pygamen mixer.music.play:n kautta. Ongelma on siinä, että jos yrittää vaihtaa soitettavan tiedoston uuteen, niin ohjelma kaatuu. Onko kyseessä streamin tallennukseen liittyvä ongelma? Ainakaan en ole keksinyt miten tiedoston, johon stream tallennetaan, saisi suljettua. Vai onko ongelmana se, että kun tallennan midin tiedostoon generated.midi, niin sen avaaminen uudelleen kaataa ohjelman. Tähän en ole keksinyt mitään ratkaisua vielä.
-- tarvitaanko muita suorituskykytestejä?

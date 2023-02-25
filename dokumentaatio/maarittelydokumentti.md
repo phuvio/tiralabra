@@ -1,8 +1,8 @@
 # Määrittelydokumentti
 
-Projektin tarkoituksena on toteuttaa Markovin ketjujen avulla algoritmi, joka tuottaa valitun säveltäjän kaltaista musiikkia. 
+Projektin tarkoituksena on toteuttaa Markovin ketjujen avulla algoritmi, joka generoi musiikkia opetusmateriaalina käytetyn kappaleen pohjalta. 
 
-Tarkoituksena on opettaa algoritmi yhden tai useamman säveltäjän sävellyksillä, jonka jälkeen algoritmi pystyy tuottamaan samantyylistä musiikkia. 
+Tarkoituksena on opettaa algoritmi yhdellä kappaleella, jonka jälkeen algoritmi pystyy generoimaan uutta musiikkia imitoimaan kappaletta. 
 
 Projekti toteutetaan Pythonilla ja projektin kielenä käytetään suomea. Vertaisarviointi voidaan tehdä myös Javalla tai JavaScriptilla.
 
@@ -10,9 +10,9 @@ Projekti on osa tietojenkäsittelytieteen kandidaatin opintoja.
 
 ## Algoritmit ja tietorakenteet
 
-Algoritmina käytetään Markovin ketjuja. Tietorakenteena käytetään trie-tietorakennetta.
+Algoritmina käytetään Markovin ketjuja. Tietorakenteena käytetään trie-tietorakennetta. Trie soveltuu tähän algoritmiin hyvin. Siihen voidaan helposti tallentaan Markovin ketjuja sekä niiden jälkeiset vaihtoehdot ja tiedon haku tietorakenteesta on nopeaa. Tässä algoritmissa ei tarvita tietojen poistoa.
 
-Algoritmin aikavaativuus on O(n).
+Algoritmin aikavaativuus on O(n) sekä tiedon tallentamisen että tiedon haun osalta. Tilavaativuus on myös O(n). 
 
 ## Lähteet
 

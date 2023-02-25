@@ -238,11 +238,11 @@ for i in range(0, 100000):
     total_time += time.time() - start_time              # pylint: disable=C0103
 avg_time_per_midi = total_time / 100000                 # pylint: disable=C0103
 avg_time_per_note = total_time / 100000                 # pylint: disable=C0103
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
 print(
-    f"         Keskimääräinen aika per midi-tiedosto {avg_time_per_midi:6f} sekuntia")
+    f"         Keskimääräinen aika per midi-tiedosto {avg_time_per_midi:6g} sekuntia")
 print(
-    f"         Keskimääräinen aika per nuotti {avg_time_per_note:6f} sekuntia")
+    f"         Keskimääräinen aika per nuotti {avg_time_per_note:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      100 nuotin pituisen midi-tiedoston tallentaminen")
@@ -254,11 +254,11 @@ for i in range(0, 10000):
     total_time += time.time() - start_time              # pylint: disable=C0103
 avg_time_per_midi = total_time / 10000                  # pylint: disable=C0103
 avg_time_per_note = total_time / 100000                 # pylint: disable=C0103
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
 print(
-    f"         Keskimääräinen aika per midi-tiedosto {avg_time_per_midi:6f} sekuntia")
+    f"         Keskimääräinen aika per midi-tiedosto {avg_time_per_midi:6g} sekuntia")
 print(
-    f"         Keskimääräinen aika per nuotti {avg_time_per_note:6f} sekuntia")
+    f"         Keskimääräinen aika per nuotti {avg_time_per_note:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      1000 nuotin pituisen midi-tiedoston tallentaminen")
@@ -270,11 +270,11 @@ for i in range(0, 1000):
     total_time += time.time() - start_time             # pylint: disable=C0103
 avg_time_per_midi = total_time / 1000                  # pylint: disable=C0103
 avg_time_per_note = total_time / 100000                # pylint: disable=C0103
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
 print(
-    f"         Keskimääräinen aika per midi-tiedosto {avg_time_per_midi:6f} sekuntia")
+    f"         Keskimääräinen aika per midi-tiedosto {avg_time_per_midi:6g} sekuntia")
 print(
-    f"         Keskimääräinen aika per nuotti {avg_time_per_note:6f} sekuntia")
+    f"         Keskimääräinen aika per nuotti {avg_time_per_note:6g} sekuntia")
 
 
 print("-----------------------------------------------------------------------------")
@@ -291,8 +291,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto")
@@ -304,8 +304,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto")
@@ -317,9 +317,9 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
-
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
+print("-----------------------------------------------------------------------------")
 print("   Haetaan 100 000 nuottia 2 pituisella prefixillä")
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto")
@@ -331,8 +331,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto")
@@ -344,8 +344,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto")
@@ -357,9 +357,9 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
-
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
+print("-----------------------------------------------------------------------------")
 print("   Haetaan 100 000 nuottia 3 pituisella prefixillä")
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto")
@@ -371,8 +371,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto")
@@ -384,8 +384,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto")
@@ -397,9 +397,9 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
-
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
+print("-----------------------------------------------------------------------------")
 print("   Haetaan 100 000 nuottia 4 pituisella prefixillä")
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto")
@@ -411,8 +411,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto")
@@ -424,8 +424,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto")
@@ -437,9 +437,9 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
-
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
+print("-----------------------------------------------------------------------------")
 print("   Haetaan 100 000 nuottia 5 pituisella prefixillä")
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto")
@@ -451,8 +451,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 100 nuotin pituisen midi-tiedosto")
@@ -464,8 +464,8 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
 
 print("-----------------------------------------------------------------------------")
 print("      Haku Triestä, johon tallennettu 1000 nuotin pituisen midi-tiedosto")
@@ -477,5 +477,5 @@ for i in range(0, 100000):
     trie.return_choices(prefix)
     total_time += time.time() - start_time
 avg_time = total_time / 100000
-print(f"         Aikaa kului: {total_time:6f} sekuntia")
-print(f"         Keskimääräinen aika {avg_time:6f} sekuntia")
+print(f"         Aikaa kului: {total_time:6g} sekuntia")
+print(f"         Keskimääräinen aika {avg_time:6g} sekuntia")
