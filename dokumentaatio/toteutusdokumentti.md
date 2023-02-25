@@ -22,7 +22,7 @@ Käyttöliittymä on rakennettu Tkinterin avulla. Siinä käyttäjä voi ladata 
 
 # Työn puutteet ja parannusehdotukset
 
-- Generoidun musiikin toistaminen puuttuu. Useista yrityksistä huolimatta en saanut musiikin toistoa toimimaan luotettavasti. Todennäköisesti ongelma liittyy midi-tiedostojen käsittelyyn.
+- Generoidun musiikin toistaminen puuttuu. Useista yrityksistä huolimatta en saanut musiikin toistoa toimimaan luotettavasti. Musiikin toistamista on kokeiltu PyGame-, midi2audio-,  Todennäköisesti ongelma liittyy midi-tiedostojen käsittelyyn.
 - Ohjelmaan voisi lisätä myös mahdollisuuden tallentaa useita kappaleita opetusmateriaaliksi. Tähän liittyy kuitenkin vaara, jos tallennetut kappaleet ovat eri sävelasteikossa. Algoritmi ei osaa ottaa tätä huomioon, jolloin generoitu musiikki voi olla täysin musiikin teorian vastaista.
 - Generoidun musiikin lopettamiseen olisi mahdollista kehittää hienostuneempi malli. Nyt musiikki saattaa katketa yllättäen. Tätä varten tulisi laatia musiikin teoriaan pohjautuva oma algoritminsa lopetuksia varten.
 
