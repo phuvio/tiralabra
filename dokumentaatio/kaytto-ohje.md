@@ -1,12 +1,14 @@
 # Käyttöohje
 
-Ohjelma täytyy ensin asentaa. Asennus tapahtuu komennolla:
+Lataa [ohjelma](https://github.com/phuvio/tiralabra/releases) viimeisin julkaisu.
+
+Asenna ohjelma. Asennus tapahtuu komennolla:
 
 ```bash
 poetry install
 ```
 
-Sen jälkeen ohjelman pystyy suorittamaan komennolla:
+Ohjelman voi suorittamaan komennolla:
 
 ```bash
 poetry run invoke start
@@ -24,4 +26,4 @@ Sitten valitaan prefixin pituus.
 
 ![Prefixin pituuden valinta](./kuvat/musiikin_generointi_3.png)
 
-Lopuksi klikkaamalla *Generoi musiikkia* -nappia generoitu musiikki tallentuu *data*-kansioon nimellä *generated.midi*.
+Lopuksi klikkaamalla *Generoi musiikkia* -nappia generoitu musiikki tallentuu *data*-kansioon midi-tiedostona nimellä *generated.midi*.
