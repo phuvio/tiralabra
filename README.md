@@ -42,6 +42,7 @@ poetry run invoke test
 ```
 
 Suorituskykytestit voi ajaa seuraavasti:
+
 Käynnistä poetry:
 ```bash
 poetry shell
