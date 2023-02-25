@@ -2,7 +2,7 @@
 
 Projektin tarkoituksena on toteuttaa Markovin ketjujen avulla algoritmi, joka generoi musiikkia opetusmateriaalina käytetyn kappaleen pohjalta. 
 
-Tarkoituksena on opettaa algoritmi yhdellä kappaleella, jonka jälkeen algoritmi pystyy generoimaan uutta musiikkia imitoimaan kappaletta. 
+Tarkoituksena on opettaa algoritmi yhdellä kappaleella, jonka jälkeen algoritmi pystyy generoimaan uutta musiikkia imitoimalla kappaletta. 
 
 Projekti toteutetaan Pythonilla ja projektin kielenä käytetään suomea. Vertaisarviointi voidaan tehdä myös Javalla tai JavaScriptilla.
 
