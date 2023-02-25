@@ -22,10 +22,12 @@ Käyttöliittymä on rakennettu Tkinterin avulla. Siinä käyttäjä voi ladata 
 
 # Työn puutteet ja parannusehdotukset
 
-- Generoidun musiikin toistaminen puuttuu. Useista yrityksistä huolimatta en saanut musiikin toistoa toimimaan luotettavasti. Musiikin toistamista on kokeiltu PyGame-, midi2audio-,  Todennäköisesti ongelma liittyy midi-tiedostojen käsittelyyn.
+- Generoidun musiikin toistaminen puuttuu. Useista yrityksistä huolimatta en saanut musiikin toistoa toimimaan luotettavasti. Musiikin toistamista on kokeiltu *PyGame-*, *midi2audio-* ja *PrettyMidi-*kirjastojen avulla. Kokeilematta jäi *FluidSynth*-kirjasto, joka vaatii *SoundFont*-kirjaston asentamista. Tämä taas vaatisi pääkäyttäjän oikeudet. Vaikka *FluidSynth*:n kautta musiikin toistaminen onnistuisi, niin asennusten hankaluuden takia ei voi taata, että ohjelma sen jälkeen toimisi kaikissa tietokoneissa ongelmitta. Todennäköisesti toisto-ongelma liittyy midi-tiedostojen käsittelyyn. 
 - Ohjelmaan voisi lisätä myös mahdollisuuden tallentaa useita kappaleita opetusmateriaaliksi. Tähän liittyy kuitenkin vaara, jos tallennetut kappaleet ovat eri sävelasteikossa. Algoritmi ei osaa ottaa tätä huomioon, jolloin generoitu musiikki voi olla täysin musiikin teorian vastaista.
 - Generoidun musiikin lopettamiseen olisi mahdollista kehittää hienostuneempi malli. Nyt musiikki saattaa katketa yllättäen. Tätä varten tulisi laatia musiikin teoriaan pohjautuva oma algoritminsa lopetuksia varten.
 
 # Lähteet
 
 - [music21: a toolkit for computer-aided musicology](http://web.mit.edu/music21/)
+- [Algorithmic Music Composition](https://junshern.github.io/algorithmic-music-tutorial/)
+- [Markov Chain for music generation](https://towardsdatascience.com/markov-chain-for-music-generation-932ea8a88305)
