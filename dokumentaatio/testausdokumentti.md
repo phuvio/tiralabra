@@ -113,6 +113,7 @@ Algoritmin suorituskykyä on testattu tallentamisen ja tiedon haun osalta. Trie-
 Testien tulos:
 -----------------------------------------------------------------------------
 Suorituskykytesti: tietojen tallentaminen Trie-tietorakenteeseen
+
    Tallennetaan 100 000 nuottia
 -----------------------------------------------------------------------------
       10 nuotin pituisen midi-tiedoston tallentaminen
@@ -139,6 +140,7 @@ Algoritmin aikavaativuus tiedon haun suhteen on O(n). Alla olevista tuloksista n
 
 -----------------------------------------------------------------------------
 Suorituskykytesti: tietojen hakeminen Trie-tietorakenteesta
+
    Haetaan 100 000 nuottia 1 pituisella prefixillä
 -----------------------------------------------------------------------------
       Haku Triestä, johon tallennettu 10 nuotin pituisen midi-tiedosto
