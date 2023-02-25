@@ -19,7 +19,7 @@ Sovelluksen toiminta on testattu Python-versiolla 3.8. Linux-koneella.
 
 ### Ohjelman asentaminen
 
-Ohjelman pystyy asentamaan komennolla:
+Ohjelman voi asentamaan komennolla:
 
 ```bash
 poetry install
@@ -27,7 +27,7 @@ poetry install
 
 ### Ohjelman suorittaminen
 
-Ohjelman pystyy suorittamaan komennolla:
+Ohjelman voi suorittamaan komennolla:
 
 ```bash
 poetry run invoke start
