@@ -23,6 +23,9 @@ class TestGenerateMusic(unittest.TestCase):
                 self.test_trie.add_list_to_trie(music[j:j+i])
 
     def test_generate_music_from_known_prefix(self):
+        """
+        testataan generoiko funktio oikean nuotin, kun prefix löytyy triestä ja sillä on vain yksi vaihtoehto
+        """
         prefix = ['n_65_quarter', 'n_38_half', 'w_0.5',]
         new_music, new_prefix = generate_music(self.test_trie, [], prefix)
 
@@ -31,6 +34,10 @@ class TestGenerateMusic(unittest.TestCase):
             new_prefix, ['n_65_quarter', 'n_38_half', 'w_0.5', 'n_62_eighth'])
 
     def test_generate_music_from_unknown_prefix(self):
+        """
+        testataan generoiko funktio oikean nuotin, kun ainoastaan prefixin viimeinen nuotti löytyy triestä
+        tämä testi ajetaan varmuuden vuoksi kahteen kertaan samalla trie-tietorakenteella
+        """
         prefix = ['n_70_quarter', 'n_28_half', 'w_1.5', 'n_62_eighth']
         new_music, new_prefix = generate_music(self.test_trie, [], prefix)
 
@@ -46,6 +53,12 @@ class TestGenerateMusic(unittest.TestCase):
             new_prefix, ['n_28_quarter', 'w_2.5', 'n_65_quarter', 'n_38_half'])
 
     def test_generate_music_gives_correct_note(self):
+        """
+        sekoitetaan tuhat nuottia sisältävä luettelo ja tallennetaan se Trie-tietorakenteeseen
+        arvotaan prefixin pituus ja valitaan siihen arpomalla nuotit edellä mainitusta sekoitetusta nuottiluettelosta
+        tarkistetaan, että edellisessä kohdassa arvotulla prefixillä generoitu nuotti on mahdollinen
+        toistetaan testi 10 000 kertaa
+        """
         thousand_notes = ['w_1.0', 'n_65_quarter', 'n_38_half', 'w_0.5', 'n_62_eighth', 'w_0.5',
                           'n_65_quarter', 'w_0.5', 'n_67_eighth', 'w_0.5', 'n_65_eighth', 'n_69_quarter',
                           'w_0.5', 'n_67_eighth', 'w_0.5', 'n_69_eighth', 'n_62_quarter', 'w_0.5',
@@ -247,7 +260,7 @@ class TestGenerateMusic(unittest.TestCase):
                 self.test_trie.add_list_to_trie(thousand_notes[j:j+i])
 
         for _ in range(0, 10000):
-            lenght_of_prefix = random.randint(0,4)
+            lenght_of_prefix = random.randint(0, 4)
             prefix = []
             for j in range(0, lenght_of_prefix):
                 prefix.append(thousand_notes[j])

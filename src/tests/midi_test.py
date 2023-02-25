@@ -5,6 +5,11 @@ from midi.midi import midi_to_string, string_to_midi
 
 class TestMidi(unittest.TestCase):
     def test_midi_to_str_to_midi(self):
+        """
+        muutetaan midi-tiedosto stringiksi, sitten takaisin midi-tiedostoksi ja vielä kerran stringiksi
+        tarkistetaan, että ensimmäisellä ja toisella kerralla stringiksi käännetyt midi-tiedostot ovat samat
+        koska ulkoinen kirjasto aiheuttaa pieniä muutoksia nuottien aika-arvoihin, niin testataan vain nuottien alkuosa
+        """
         midi_file_to_string = midi_to_string(
             os.path.abspath("./src/tests/test.midi"))
 

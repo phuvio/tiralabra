@@ -31,11 +31,17 @@ class TestTrie(unittest.TestCase):
         self.ode_to_joy = ode_to_joy.split()
 
     def test_add_notes_to_trie(self):
+        """
+        tarkistaa trien koon, kun siihen on tallennettu 7 nuottia
+        """
         self.test_trie.add_list_to_trie(self.list_of_notes)
 
         self.assertEqual(self.test_trie.size(), 8)
 
     def test_add_ode_to_joy_to_trie(self):
+        """
+        tarkistaa trien koon, kun siihen on tallennettu Oodi ilolle -kappale
+        """
         for i in range(2, 7):
             for j in range(0, len(self.ode_to_joy) - i):
                 self.test_trie.add_list_to_trie(self.ode_to_joy[j:j+i])
@@ -43,12 +49,18 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(self.test_trie.size(), 263)
 
     def test_add_same_list_to_trie(self):
+        """
+        saman nuottiketjun lisääminen ei muuta trien kokoa
+        """
         self.test_trie.add_list_to_trie(self.list_of_notes)
         self.test_trie.add_list_to_trie(self.list_of_notes)
 
         self.assertEqual(self.test_trie.size(), 8)
 
     def test_add_ode_to_joy_twice_to_trie(self):
+        """
+        Oodi ilolle -kappaleen tallentaminen kahteen kertaan triehen ei muuta sen kokoa
+        """
         for i in range(2, 7):
             for j in range(0, len(self.ode_to_joy) - i):
                 self.test_trie.add_list_to_trie(self.ode_to_joy[j:j+i])
@@ -60,18 +72,27 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(self.test_trie.size(), 263)
 
     def test_add_two_lists_with_first_same_note(self):
+        """
+        kahden erilaisen, mutta samalla nuotilla alkavan, nuottiketjun lisääminen lisää trien kokoa eroavien nuottien määrän verran
+        """
         self.test_trie.add_list_to_trie(self.list_of_notes)
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
 
         self.assertEqual(self.test_trie.size(), 11)
 
     def test_add_two_lists_with_different_notes(self):
+        """
+        kahden täysin erilaisen nuottiketjun lisääminen triehen kasvattaa koon nuottiketjujen nuottien määrän verran
+        """
         self.test_trie.add_list_to_trie(self.list_of_notes)
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
         self.assertEqual(self.test_trie.size(), 11)
 
     def test_find_given_prefix(self):
+        """
+        haluttu prefix, joka on tallennettu triehen, löytyy
+        """
         self.test_trie.add_list_to_trie(self.list_of_notes)
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
 
@@ -84,6 +105,9 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(found_prefix, True)
 
     def test_given_prefix_not_found(self):
+        """
+        haluttu prefix, jota ei ole tallennettu triehen, ei löydy
+        """
         self.test_trie.add_list_to_trie(self.list_of_notes)
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
 
@@ -96,6 +120,10 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(found_prefix, False)
 
     def test_possible_choices_from_given_prefix(self):
+        """
+        triestä löytyvä prefix palauttaa luettelon mahdollisista jatkonuoteista
+        testissä verrataan, että löydetyt vaihtoehdot ovat oikein
+        """
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
         self.test_trie.add_list_to_trie([
             'n_65_quarter',
@@ -117,6 +145,10 @@ class TestTrie(unittest.TestCase):
             list(found_choices.keys()), ['n_69_eighth', 'n_65_eighth', 'n_70_eighth'])
 
     def test_possible_choices_from_given_prefix_with_more_probabilities(self):
+        """
+        triestä löytyvä prefix palauttaa luettelon mahdollisista jatkonuoteista ja niiden esiintyvyydet opetusmateriaalissa
+        testissä verrataan, että löydetyt vaihtoehdot ja niiden todennäköisyydet ovat oikein
+        """
         self.test_trie.add_list_to_trie(self.second_list_of_notes)
         self.test_trie.add_list_to_trie([
             'n_65_quarter',
@@ -157,6 +189,9 @@ class TestTrie(unittest.TestCase):
         )
 
     def test_no_found_choices_from_given_prefix(self):
+        """
+        jos prefixiä ei löydy triestä, niin trie ei palauta jatkovaihtoehtoja
+        """
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
         found_choices = self.test_trie.return_choices([
@@ -167,6 +202,9 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(found_choices, {})
 
     def test_prefix_not_found(self):
+        """
+        trie ei palauta jatkovaihtoehtoja, jos prefixiä ei löydy triestä
+        """
         self.test_trie.add_list_to_trie(self.third_list_of_notes)
 
         found_choices = self.test_trie.return_choices([
@@ -176,6 +214,10 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(found_choices, {})
 
     def test_find_given_prefixes_from_ode_to_joy(self):
+        """
+        tarkistaa koko trien sen jälkeen, kun siihen on tallennettu Oodi ilolle -kappale
+        testissä tarkastetaan, että jokaiseen triehen tallennettuun solmuun on tallennettu oikeat alisolmut sekä niiden esiintyvyysmäärät
+        """
         for i in range(2, 7):
             for j in range(0, len(self.ode_to_joy) - i):
                 self.test_trie.add_list_to_trie(self.ode_to_joy[j:j+i])
