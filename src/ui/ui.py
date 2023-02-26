@@ -23,6 +23,7 @@ class UI:
         self._select_prefix = None
         self._content = None
         self._generated_music = []
+        self._selected_file = tk.StringVar()
 
     def _select_file(self):
         """Avaa valitun midi-tiedoston ja tallentaa sen nuotit Trie-tietorakenteeseen
@@ -38,7 +39,7 @@ class UI:
             if file == None:
                 return
         except IOError:
-            print("eerror: ", IOError)
+            print("error: ", IOError)
             messagebox.showerror("Tiedostoa ei voitu avata",
                                  "Tiedosto ei ollut midi-tiedosto.")
             return
@@ -46,6 +47,9 @@ class UI:
         try:
             self._content = list(midi_to_string(
                 os.path.abspath(file.name)).split())
+            self._selected_file = os.path.basename(file.name).split("/")[0]
+            self._selected_file_label.config(
+                text=f"Musiikin generointiin valittu tiedosto:\n {self._selected_file}")
         except:
             messagebox.showerror("Tiedostoa ei voitu avata",
                                  "Tiedosto ei ollut midi-tiedosto.")
@@ -94,6 +98,12 @@ class UI:
                           font=('Helvetica', 14, 'bold'))
 
         label.pack(padx=5, pady=15)
+
+        self._selected_file_label = ttk.Label(
+            master=self._root,
+            text=f"Musiikin generointiin valittu tiedosto:\n ei valintaa"
+        )
+        self._selected_file_label.pack(padx=5, pady=5)
 
         open_button = ttk.Button(
             self._root,
