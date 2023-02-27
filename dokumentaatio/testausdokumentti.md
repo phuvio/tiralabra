@@ -1,7 +1,7 @@
 # Testausdokumentti
 
 Yksikkötestauksen kattavuusraportti:
-![Testikattavuus 25.2.2023](./kuvat/testikattavuus_25.2.2023.png)
+![Testikattavuus 27.2.2023](./kuvat/testikattavuus_27.2.2023.png)
 
 ## Yksikkötestaus
 
@@ -96,6 +96,7 @@ Suoritetut testit:
   - sekoitetaan tuhat nuottia sisältävä luettelo ja tallennetaan se Trie-tietorakenteeseen
   - arvotaan prefixin pituus ja valitaan siihen arpomalla nuotit edellä mainitusta sekoitetusta nuottiluettelosta
   - tarkistetaan, että edellisessä kohdassa arvotulla prefixillä generoitu nuotti on mahdollinen
+  - jos prefixiä ei löydy, niin tarkistetaan, että funktio palauttaa tyhjän dictionaryn
   - toistetaan testi 10 000 kertaa 
 
 ### Midin käsittelyyn liittyvien funktioiden yksikkötestaus

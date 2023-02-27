@@ -14,7 +14,7 @@ class UI:
         """Luokan konstruktori. Luo uuden käyttöliittymästä vastaavan luokan
 
         Args:
-            root: Tkinter-elemnetti, jonka sisään käyttöliittymä alustetaan
+            root: Tkinter-elementti, jonka sisään käyttöliittymä alustetaan
         """
 
         self._root = root

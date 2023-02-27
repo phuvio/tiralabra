@@ -47,6 +47,7 @@ class Trie:
             dictionary:
                 dictionary, jossa avaimina annettua prefixiä seuraavat nuottivaihtoehdot
                 sekä arvoina nuottivaihtoehtojen esiintymismäärät
+                jos prefixiä ei löydy, niin palautetaan tyhjä dictionary
         """
         nxt = self.root
         for note in prefix:
@@ -61,7 +62,7 @@ class Trie:
 
         Args:
             current:
-                lähtösolmu, oletuksena Prefic puun juuri
+                lähtösolmu, oletuksena Prefix-puun juuri
 
         Returns:
             int:
@@ -93,7 +94,7 @@ class _TrieNode:
                 nuotti, joka lisätään Trie-solmuun
 
         Returns:
-            dictionary, joka pitää kirjaa solmun kaikista alasolmuista
+            dictionary, joka pitää kirjaa solmun kaikista alasolmuista ja niiden esiintyvyysmäärästä
         """
         if note not in self.nodes:
             self.nodes[note] = _TrieNode()

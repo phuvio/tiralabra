@@ -4,7 +4,7 @@ import music21
 
 
 def midi_to_string(midi_path):
-    """Muuttaa midi-tiedoston str:ksi
+    """Muuttaa midi-tiedoston str:ksi music21-kirjaston avulla
 
     Args:
         midi_path: midi-tiedoston sijainti
@@ -35,7 +35,7 @@ def midi_to_string(midi_path):
 
 
 def string_to_midi(sequence_of_notes):
-    """Muuttaa str:n midi-tiedostoksi
+    """Muuttaa str:n midi-tiedostoksi music21-kirjaston avulla
 
     Args:
         sequence_of_notes: muutettava str
