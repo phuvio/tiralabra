@@ -269,6 +269,31 @@ class TestGenerateMusic(unittest.TestCase):
                 new_music, _ = generate_music(self.test_trie, [], prefix)
 
                 self.assertIn(new_music[0], note)
+
+            elif len(prefix[1:]) > 0 and self.test_trie.search_given_prefix(prefix[1:]):
+                note = list(self.test_trie.return_choices(prefix[1:]).keys())
+                new_music, _ = generate_music(self.test_trie, [], prefix[1:])
+
+                self.assertIn(new_music[0], note)
+
+            elif len(prefix[2:]) > 0 and self.test_trie.search_given_prefix(prefix[2:]):
+                note = list(self.test_trie.return_choices(prefix[2:]).keys())
+                new_music, _ = generate_music(self.test_trie, [], prefix[2:])
+
+                self.assertIn(new_music[0], note)
+
+            elif len(prefix[3:]) > 0 and self.test_trie.search_given_prefix(prefix[3:]):
+                note = list(self.test_trie.return_choices(prefix[3:]).keys())
+                new_music, _ = generate_music(self.test_trie, [], prefix[3:])
+
+                self.assertIn(new_music[0], note)
+
+            elif len(prefix[4:]) > 0 and self.test_trie.search_given_prefix(prefix[4:]):
+                note = list(self.test_trie.return_choices(prefix[4:]).keys())
+                new_music, _ = generate_music(self.test_trie, [], prefix[4:])
+
+                self.assertIn(new_music[0], note)
+
             else:
                 note = list(self.test_trie.return_choices(prefix))
 
