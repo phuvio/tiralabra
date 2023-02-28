@@ -18,7 +18,7 @@ Ohjelman käyttöliittymä avautuu:
 
 ![Ohjelman käyttöliittymä](./kuvat/musiikin_generointi_1.png)
 
-Seuraavaksi valitaan haluttu opetuskappale. *Data*-kansioon on tallennettu valmiiksi muutamia erityyppisiä kappaleita, joita voi käyttää opetusmusiikkina.
+Seuraavaksi valitaan haluttu opetuskappale. Opetuskappaleina voi käyttää yhdellä soittimella soitettuja midi-tiedostoja. *Data*-kansioon on tallennettu valmiiksi muutamia erityyppisiä kappaleita, joita voi käyttää opetusmusiikkina.
 
 ![Opetuskappaleen valinta](./kuvat/musiikin_generointi_2.png)
 
